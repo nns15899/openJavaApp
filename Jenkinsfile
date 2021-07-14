@@ -1,5 +1,5 @@
 pipeline {
-    agent "any"{
+    agent any
 
         stages {
             stage('Checkout'){
@@ -41,7 +41,7 @@ pipeline {
             
         }
 
-    }
+    
         post{
             always{
                 cleanWs()
