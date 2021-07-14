@@ -30,12 +30,12 @@ pipeline {
             stage('Pushing to ECR'){
                 steps{
                     echo 'Now it is getting pushed'
-                    sh 'docker push 986413879559.dkr.ecr.ap-south-1.amazonaws.com/pipeline-predators:latest'
+                    sh 'docker push 986413879559.dkr.ecr.ap-south-1.amazonaws.com/pipeline-predators'
                 }
             }
             stage('Docker Run'){
                 steps{
-                    sh 'docker run -d -p 8096:5000 986413879559.dkr.ecr.ap-south-1.amazonaws.com/pipeline-predators:latest'
+                    sh 'docker run -d -p 8096:5000 986413879559.dkr.ecr.ap-south-1.amazonaws.com/pipeline-predators'
                 }
             }
             
