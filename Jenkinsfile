@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+    environment{
+        registry = "986413879559.dkr.ecr.us-east-1.amazonaws.com/pipeline-predators"
+    }
         stages {
             stage('Checkout'){
                 steps{
@@ -11,9 +13,7 @@ pipeline {
             stage('Building'){
                 steps{
                     script{
-                        sh 'aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 986413879559.dkr.ecr.ap-south-1.amazonaws.com'
-                        sh 'docker build -t pipeline-predators .'
-                        sh 'Docker images built success !'
+                        dockerImage = docker.build registry
                     }
                 }
             }
