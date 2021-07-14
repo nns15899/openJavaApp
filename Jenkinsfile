@@ -23,7 +23,7 @@ pipeline {
                         sh 'aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 986413879559.dkr.ecr.ap-south-1.amazonaws.com'
                         echo 'login to aws success !' 
                         echo 'tagging my image'
-                        sh 'docker tag pipeline-predators:latest 986413879559.dkr.ecr.ap-south-1.amazonaws.com/pipeline-predators:latest'                      
+                                              
                     }
                 }
             }
