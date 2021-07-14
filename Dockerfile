@@ -1,4 +1,4 @@
-FROM OpenJDK:8
+FROM openjdk:8
 COPY . /usr/src/myapp
 WORKDIR /usr/src/myapp
 RUN javac Kick.java
