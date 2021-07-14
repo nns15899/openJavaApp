@@ -30,7 +30,9 @@ pipeline {
             stage('Pushing to ECR'){
                 steps{
                     echo 'Now it is getting pushed'
-                    sh 'docker push 986413879559.dkr.ecr.ap-south-1.amazonaws.com/pipeline-predators'
+                    sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 986413879559.dkr.ecr.ap-south-1.amazonaws.com'
+                    sh 'docker push 9986413879559.dkr.ecr.ap-south-1.amazonaws.com/pipeline-predators'
+
                 }
             }
             stage('Docker Run'){
