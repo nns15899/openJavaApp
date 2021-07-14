@@ -22,7 +22,7 @@ pipeline {
                     script {
 
                         sh 'aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 986413879559.dkr.ecr.ap-south-1.amazonaws.com'
-                        sh 'docker push 986413879559.dkr.ecr.ap-south-1.amazonaws.com/pipeline-predators:v1'
+                        sh 'docker push 986413879559.dkr.ecr.ap-south-1.amazonaws.com/pipeline-predators'
                     }
                 }
             }
@@ -36,7 +36,7 @@ pipeline {
             stage('Docker Run') {
                 steps{
                     script{
-                        sh 'docker run -d -p 8096:5000 --rm --name myContainer 986413879559.dkr.ecr.ap-south-1.amazonaws.com/pipeline-predators:v1'
+                        sh 'docker run -d -p 8096:5000 --rm --name myContainer 986413879559.dkr.ecr.ap-south-1.amazonaws.com/pipeline-predators'
                     }
                 }
             }
