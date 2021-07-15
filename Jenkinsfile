@@ -36,7 +36,7 @@ pipeline {
             stage('Docker Run') {
                 steps{
                     script{
-                        sh 'docker run -d -p 8096:5000 --rm --name myContainer 986413879559.dkr.ecr.ap-south-1.amazonaws.com/pipeline-predators'
+                        sh 'docker run -d -p 8093:5000 --rm --name myContainer 986413879559.dkr.ecr.ap-south-1.amazonaws.com/pipeline-predators'
                     }
                 }
             }
